@@ -1,3 +1,4 @@
+import { Queue } from './data-structures/queue';
 import Stack from './data-structures/stack';
 import { parenthesesChecker } from './others/balanced-symbols';
 import { baseConverter, decimalToBinary } from './others/base-converter';
@@ -30,3 +31,17 @@ console.log('[{()]', parenthesesChecker('[{()]')); // false
 console.log(hanoiStack(3));
 
 console.log(hanoi(3, 'source', 'helper', 'dest'));
+
+
+const queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue('John');
+queue.enqueue('Jack');
+console.log(queue.toString())
+queue.enqueue('Camila');
+console.log(queue.toString());
+console.log(queue.size());
+console.log(queue.isEmpty());
+queue.dequeue();
+queue.dequeue();
+console.log(queue.toString());
