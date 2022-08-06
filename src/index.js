@@ -1,4 +1,5 @@
 import Deque from './data-structures/deque';
+import LinkedList from './data-structures/linked-list';
 import Queue from './data-structures/queue';
 import Stack from './data-structures/stack';
 import { parenthesesChecker } from './others/balanced-symbols';
@@ -50,33 +51,40 @@ import { palindromeChecker } from './others/palindrome-checker';
 // console.log(queue.toString());
 
 
-const deque = new Deque();
-console.log(deque.isEmpty());
-deque.addBack('John');
-deque.addBack('Jack');
-console.log(deque.toString());
-deque.addBack('Camila');
-console.log(deque.toString());
-console.log(deque.size());
-console.log(deque.isEmpty());
-deque.removeFront();
-console.log(deque.toString());
-deque.removeBack();
-console.log(deque.toString());
-deque.addFront('John');
-console.log(deque.toString());
+// const deque = new Deque();
+// console.log(deque.isEmpty());
+// deque.addBack('John');
+// deque.addBack('Jack');
+// console.log(deque.toString());
+// deque.addBack('Camila');
+// console.log(deque.toString());
+// console.log(deque.size());
+// console.log(deque.isEmpty());
+// deque.removeFront();
+// console.log(deque.toString());
+// deque.removeBack();
+// console.log(deque.toString());
+// deque.addFront('John');
+// console.log(deque.toString());
 
-const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl'];
-const result = hotPotato(names, 7);
-result.eliminated.forEach(name => {
-  console.log(`${name} was eliminated from the Hot Potato game.`);
-})
-console.log(`The winner is: ${result.winner}`);
+// const names = ['John', 'Jack', 'Camila', 'Ingrid', 'Carl'];
+// const result = hotPotato(names, 7);
+// result.eliminated.forEach(name => {
+//   console.log(`${name} was eliminated from the Hot Potato game.`);
+// })
+// console.log(`The winner is: ${result.winner}`);
 
 
-console.log('a', palindromeChecker('a'));
-console.log('aa', palindromeChecker('aa'));
-console.log('kayak', palindromeChecker('kayak'));
-console.log('level', palindromeChecker('level'));
-console.log('Was it a car or a cat I saw', palindromeChecker('Was it a car or a cat I saw'));
-console.log('Step on no pets', palindromeChecker('Step on no pets'));
+// console.log('a', palindromeChecker('a'));
+// console.log('aa', palindromeChecker('aa'));
+// console.log('kayak', palindromeChecker('kayak'));
+// console.log('level', palindromeChecker('level'));
+// console.log('Was it a car or a cat I saw', palindromeChecker('Was it a car or a cat I saw'));
+// console.log('Step on no pets', palindromeChecker('Step on no pets'));
+
+
+const list = new LinkedList();
+list.push(15);
+list.push(10);
+
+console.log(list);
