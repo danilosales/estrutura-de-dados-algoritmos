@@ -1,4 +1,6 @@
 import Deque from './data-structures/deque';
+import Dictionary from './data-structures/dictionary';
+import HashTable from './data-structures/hash-table';
 import LinkedList from './data-structures/linked-list';
 import Queue from './data-structures/queue';
 import { Set } from './data-structures/set';
@@ -139,16 +141,50 @@ import { palindromeChecker } from './others/palindrome-checker';
 // const differenceAB = setA.difference(setB);
 // console.log(differenceAB.values());
 
-const setA = new Set();
-setA.add(1);
-setA.add(2);
-const setB = new Set();
-setB.add(1);
-setB.add(2);
-setB.add(3);
-const setC = new Set();
-setC.add(2);
-setC.add(3);
-setC.add(4);
-console.log(setA.isSubsetOf(setB));
-console.log(setA.isSubsetOf(setC));
+// const setA = new Set();
+// setA.add(1);
+// setA.add(2);
+// const setB = new Set();
+// setB.add(1);
+// setB.add(2);
+// setB.add(3);
+// const setC = new Set();
+// setC.add(2);
+// setC.add(3);
+// setC.add(4);
+// console.log(setA.isSubsetOf(setB));
+// console.log(setA.isSubsetOf(setC));
+
+
+// const dictionary = new Dictionary();
+// dictionary.set('Gandalf', 'gandalf@email.com');
+// dictionary.set('John', 'johnsnow@email.com');
+// dictionary.set('Tyrion', 'tyrion@email.com');
+
+// console.log(dictionary.toString());
+// console.log(dictionary.hasKey('Gandalf'));
+// console.log(dictionary.size());
+// console.log(dictionary.keys());
+// console.log(dictionary.values());
+// console.log(dictionary.get('Tyrion'));
+
+// dictionary.remove('John');
+// console.log(dictionary.keys());
+// console.log(dictionary.values());
+// console.log(dictionary.keyValues());
+
+// dictionary.forEach((k, v) => {
+//   console.log('forEach: ', `key: ${k}, value: ${v}`);
+// })
+
+const hash = new HashTable();
+hash.put('Gandalf', 'gandalf@email.com');
+hash.put('John', 'johnsnow@email.com');
+hash.put('Tyrion', 'tyrion@email.com');
+console.log(hash.hashCode('Gandalf') + ' - Gandalf');
+console.log(hash.hashCode('John') + ' - John');
+console.log(hash.hashCode('Tyrion') + ' - Tyrion');
+console.log(hash.get('Gandalf'));
+console.log(hash.get('Danilo'));
+hash.remove('Gandalf');
+console.log(hash.get('Gandalf'));
