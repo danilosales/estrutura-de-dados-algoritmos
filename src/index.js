@@ -1,6 +1,7 @@
 import Deque from './data-structures/deque';
 import LinkedList from './data-structures/linked-list';
 import Queue from './data-structures/queue';
+import { Set } from './data-structures/set';
 import Stack from './data-structures/stack';
 import { parenthesesChecker } from './others/balanced-symbols';
 import { baseConverter, decimalToBinary } from './others/base-converter';
@@ -83,8 +84,71 @@ import { palindromeChecker } from './others/palindrome-checker';
 // console.log('Step on no pets', palindromeChecker('Step on no pets'));
 
 
-const list = new LinkedList();
-list.push(15);
-list.push(10);
+// const list = new LinkedList();
+// list.push(15);
+// list.push(10);
 
-console.log(list);
+// console.log(list);
+
+
+// const set = new Set();
+// set.add(1);
+// console.log(set.values());
+// console.log(set.has(1));
+// console.log(set.size());
+// set.add(2);
+// console.log(set.values());
+// console.log(set.has(2));
+// console.log(set.size());
+// set.delete(1);
+// console.log(set.values());
+// set.delete(2);
+// console.log(set.values());
+
+// const setA = new Set();
+// setA.add(1);
+// setA.add(2);
+// setA.add(3);
+// const setB = new Set();
+// setB.add(3);
+// setB.add(4);
+// setB.add(5);
+// setB.add(6);
+// const unionAB = setA.union(setB);
+// console.log(unionAB.values());
+
+// const setA = new Set();
+// setA.add(1);
+// setA.add(2);
+// setA.add(3);
+// const setB = new Set();
+// setB.add(2);
+// setB.add(3);
+// setB.add(4);
+// const intersectionAB = setA.intersection(setB);
+// console.log(intersectionAB.values());
+
+// const setA = new Set();
+// setA.add(1);
+// setA.add(2);
+// setA.add(3);
+// const setB = new Set();
+// setB.add(2);
+// setB.add(3);
+// setB.add(4);
+// const differenceAB = setA.difference(setB);
+// console.log(differenceAB.values());
+
+const setA = new Set();
+setA.add(1);
+setA.add(2);
+const setB = new Set();
+setB.add(1);
+setB.add(2);
+setB.add(3);
+const setC = new Set();
+setC.add(2);
+setC.add(3);
+setC.add(4);
+console.log(setA.isSubsetOf(setB));
+console.log(setA.isSubsetOf(setC));
