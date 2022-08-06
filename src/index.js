@@ -7,6 +7,7 @@ import { Set } from './data-structures/set';
 import Stack from './data-structures/stack';
 import { parenthesesChecker } from './others/balanced-symbols';
 import { baseConverter, decimalToBinary } from './others/base-converter';
+import { fibonacciIterative } from './others/fibonacci';
 import { hanoi, hanoiStack } from './others/hanoi';
 import { hotPotato } from './others/hot-potato';
 import { palindromeChecker } from './others/palindrome-checker';
@@ -177,14 +178,20 @@ import { palindromeChecker } from './others/palindrome-checker';
 //   console.log('forEach: ', `key: ${k}, value: ${v}`);
 // })
 
-const hash = new HashTable();
-hash.put('Gandalf', 'gandalf@email.com');
-hash.put('John', 'johnsnow@email.com');
-hash.put('Tyrion', 'tyrion@email.com');
-console.log(hash.hashCode('Gandalf') + ' - Gandalf');
-console.log(hash.hashCode('John') + ' - John');
-console.log(hash.hashCode('Tyrion') + ' - Tyrion');
-console.log(hash.get('Gandalf'));
-console.log(hash.get('Danilo'));
-hash.remove('Gandalf');
-console.log(hash.get('Gandalf'));
+// const hash = new HashTable();
+// hash.put('Gandalf', 'gandalf@email.com');
+// hash.put('John', 'johnsnow@email.com');
+// hash.put('Tyrion', 'tyrion@email.com');
+// console.log(hash.hashCode('Gandalf') + ' - Gandalf');
+// console.log(hash.hashCode('John') + ' - John');
+// console.log(hash.hashCode('Tyrion') + ' - Tyrion');
+// console.log(hash.get('Gandalf'));
+// console.log(hash.get('Danilo'));
+// hash.remove('Gandalf');
+// console.log(hash.get('Gandalf'));
+
+
+console.log('fibonacci(2)', fibonacciIterative(2));
+console.log('fibonacci(3)', fibonacciIterative(3));
+console.log('fibonacci(4)', fibonacciIterative(4));
+console.log('fibonacci(5)', fibonacciIterative(5));
