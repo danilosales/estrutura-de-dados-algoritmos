@@ -1,6 +1,6 @@
 import { defaultEquals } from '../util';
 import LinkedList from './linked-list';
-import { DoublyNode } from './models/doubly-node';
+import { DoublyNode } from './models/linked-list-models';
 
 export class DoublyLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals) {

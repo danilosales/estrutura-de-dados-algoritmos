@@ -1,3 +1,4 @@
+import BinarySearchTree from './data-structures/binary-search-tree';
 import Deque from './data-structures/deque';
 import Dictionary from './data-structures/dictionary';
 import HashTable from './data-structures/hash-table';
@@ -191,7 +192,35 @@ import { palindromeChecker } from './others/palindrome-checker';
 // console.log(hash.get('Gandalf'));
 
 
-console.log('fibonacci(2)', fibonacciIterative(2));
-console.log('fibonacci(3)', fibonacciIterative(3));
-console.log('fibonacci(4)', fibonacciIterative(4));
-console.log('fibonacci(5)', fibonacciIterative(5));
+// console.log('fibonacci(2)', fibonacciIterative(2));
+// console.log('fibonacci(3)', fibonacciIterative(3));
+// console.log('fibonacci(4)', fibonacciIterative(4));
+// console.log('fibonacci(5)', fibonacciIterative(5));
+
+const tree = new BinarySearchTree();
+tree.insert(11);
+tree.insert(7);
+tree.insert(15);
+tree.insert(5);
+tree.insert(3);
+tree.insert(9);
+tree.insert(8);
+tree.insert(10);
+tree.insert(13);
+tree.insert(12);
+tree.insert(14);
+tree.insert(20);
+tree.insert(18);
+tree.insert(25);
+tree.insert(6);
+
+const printNode = (value) => console.log(value);
+tree.inOrderTraverse(printNode);
+tree.preOrderTraverse(printNode);
+tree.postOrderTraverse(printNode);
+
+console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
+console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
+
+console.log(tree.remove(15));
+tree.preOrderTraverse(printNode);

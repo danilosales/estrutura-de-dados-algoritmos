@@ -1,7 +1,8 @@
-export class Node {
+export default class Node {
   constructor(key) {
     this.key = key;
-    this.next = undefined;
+    this.left = undefined;
+    this.right = undefined;
   }
 
   toString() {
