@@ -1,7 +1,14 @@
+import { BFS, breadthFirstSearch } from './algorithms/graph/breadth-first-search';
+import { depthFirstSearch, DFS } from './algorithms/graph/depth-first-search';
+import { dijkstra } from './algorithms/graph/dijkstra';
+import { floydWarshall } from './algorithms/graph/floyd-warshall';
+import { kruskal } from './algorithms/graph/kruskal';
+import { prim } from './algorithms/graph/prim';
 import heapSort from './algorithms/sorting/heap-sort';
 import BinarySearchTree from './data-structures/binary-search-tree';
 import Deque from './data-structures/deque';
 import Dictionary from './data-structures/dictionary';
+import Graph from './data-structures/graph';
 import HashTable from './data-structures/hash-table';
 import { MaxHeap, MinHeap } from './data-structures/heap';
 import LinkedList from './data-structures/linked-list';
@@ -227,34 +234,193 @@ import { palindromeChecker } from './others/palindrome-checker';
 // console.log(tree.remove(15));
 // tree.preOrderTraverse(printNode);
 
-let heap = new MinHeap();
-heap.insert(2);
-heap.insert(3);
-heap.insert(4);
-heap.insert(5);
-heap.insert(1);
+// let heap = new MinHeap();
+// heap.insert(2);
+// heap.insert(3);
+// heap.insert(4);
+// heap.insert(5);
+// heap.insert(1);
 
-console.log('Heap size: ', heap.size());
-console.log('Heap is empty: ', heap.isEmpty());
-console.log('Heap min value: ', heap.findMinimum());
+// console.log('Heap size: ', heap.size());
+// console.log('Heap is empty: ', heap.isEmpty());
+// console.log('Heap min value: ', heap.findMinimum());
 
 
-heap = new MinHeap();
-for(let i = 1; i < 10; i++) {
-  heap.insert(i);
+// heap = new MinHeap();
+// for(let i = 1; i < 10; i++) {
+//   heap.insert(i);
+// }
+// console.log('Extract minimum: ', heap.extract());
+
+// const maxHeap = new MaxHeap();
+// maxHeap.insert(2);
+// maxHeap.insert(3);
+// maxHeap.insert(4);
+// maxHeap.insert(5);
+// maxHeap.insert(1);
+// console.log('Heap size: ', maxHeap.size());
+// console.log('Heap min value: ', maxHeap.findMinimum());
+
+
+// const array = [7, 6, 3, 5, 4, 1, 2];
+// console.log('before sorting: ', array);
+// console.log('after sorting: ', heapSort(array));
+
+// let graph = new Graph();
+// let myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+// for(let i = 0; i < myVertices.length; i++) {
+//   graph.addVertex(myVertices[i]);
+// }
+// graph.addEdge('A', 'B');
+// graph.addEdge('A', 'C');
+// graph.addEdge('A', 'D');
+// graph.addEdge('C', 'D');
+// graph.addEdge('C', 'G');
+// graph.addEdge('D', 'G');
+// graph.addEdge('D', 'H');
+// graph.addEdge('B', 'E');
+// graph.addEdge('B', 'F');
+// graph.addEdge('E', 'I');
+
+// console.log('********* printing graph ***********');
+
+// console.log(graph.toString());
+
+// console.log('********* bfs with callback ***********');
+
+// const printVertex = value => console.log('Visited vertex: ' + value);
+
+// breadthFirstSearch(graph, myVertices[0], printVertex);
+
+// console.log('********* sorthest path - BFS ***********');
+// const shortestPathA = BFS(graph, myVertices[0]);
+// console.log(shortestPathA.distances);
+// console.log(shortestPathA.predecessors);
+
+// // from A to All other vertices
+// const fromVertex = myVertices[0];
+
+// for (let i = 1; i < myVertices.length; i++) {
+//   const toVertex = myVertices[i];
+//   const path = new Stack();
+//   for (let v = toVertex; v !== fromVertex; v = shortestPathA.predecessors[v]) {
+//     path.push(v);
+//   }
+//   path.push(fromVertex);
+//   let s = path.pop();
+//   while (!path.isEmpty()) {
+//     s += ' - ' + path.pop();
+//   }
+//   console.log(s);
+// }
+
+
+// console.log('********* dfs with callback ***********');
+
+// depthFirstSearch(graph, printVertex);
+
+
+// console.log('********* topological sort - DFS ***********');
+
+// graph = new Graph(true); // directed graph
+
+// myVertices = ['A', 'B', 'C', 'D', 'E', 'F'];
+// for (let i = 0; i < myVertices.length; i++) {
+//   graph.addVertex(myVertices[i]);
+// }
+// graph.addEdge('A', 'C');
+// graph.addEdge('A', 'D');
+// graph.addEdge('B', 'D');
+// graph.addEdge('B', 'E');
+// graph.addEdge('C', 'F');
+// graph.addEdge('F', 'E');
+
+// const result = DFS(graph);
+// console.log('discovery', result.discovery);
+// console.log('finished', result.finished);
+// console.log('predecessors', result.predecessors);
+
+// const fTimes = result.finished;
+// let s = '';
+// for (let count = 0; count < myVertices.length; count++) {
+//   let max = 0;
+//   let maxName = null;
+//   for (let i = 0; i < myVertices.length; i++) {
+//     if (fTimes[myVertices[i]] > max) {
+//       max = fTimes[myVertices[i]];
+//       maxName = myVertices[i];
+//     }
+//   }
+//   s += ' - ' + maxName;
+//   delete fTimes[maxName];
+// }
+// console.log(s);
+
+
+// const graph = [
+//   [0, 2, 4, 0, 0, 0],
+//   [0, 0, 2, 4, 2, 0],
+//   [0, 0, 0, 0, 3, 0],
+//   [0, 0, 0, 0, 0, 2],
+//   [0, 0, 0, 3, 0, 2],
+//   [0, 0, 0, 0, 0, 0]
+// ];
+
+// console.log("********* Dijkstra's Algorithm - Shortest Path ***********");
+
+// var dist = dijkstra(graph, 0);
+
+// for (let i = 0; i < dist.length; i++){
+//     console.log(i + '\t\t' + dist[i]);
+// }
+
+// console.log('********* Floyd-Warshall Algorithm - All-Pairs Shortest Path ***********');
+
+// const INF = Infinity;
+// const graph = [
+//   [INF, 2, 4, INF, INF, INF],
+//   [INF, INF, 2, 4, 2, INF],
+//   [INF, INF, INF, INF, 3, INF],
+//   [INF, INF, INF, INF, INF, 2],
+//   [INF, INF, INF, 3, INF, 2],
+//   [INF, INF, INF, INF, INF, INF]
+// ];
+
+// const dist = floydWarshall(graph);
+
+// let s = '';
+// for (let i = 0; i < dist.length; ++i) {
+//   s = '';
+//   for (var j = 0; j < dist.length; ++j) {
+//     if (dist[i][j] === INF) s += 'INF ';
+//     else s += dist[i][j] + '   ';
+//   }
+//   console.log(s);
+// }
+
+const graph = [
+  [0, 2, 4, 0, 0, 0],
+  [2, 0, 2, 4, 2, 0],
+  [4, 2, 0, 0, 3, 0],
+  [0, 4, 0, 0, 3, 2],
+  [0, 2, 3, 3, 0, 2],
+  [0, 0, 0, 2, 2, 0]
+];
+
+console.log("********* Prim's Algorithm - Minimum Spanning Tree ***********");
+
+let parent = prim(graph);
+
+console.log('Edge   Weight');
+for (let i = 1; i < graph.length; i++) {
+  console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
 }
-console.log('Extract minimum: ', heap.extract());
 
-const maxHeap = new MaxHeap();
-maxHeap.insert(2);
-maxHeap.insert(3);
-maxHeap.insert(4);
-maxHeap.insert(5);
-maxHeap.insert(1);
-console.log('Heap size: ', maxHeap.size());
-console.log('Heap min value: ', maxHeap.findMinimum());
+console.log('********* Kruskal Algorithm - Minimum Spanning Tree ***********');
 
+parent = kruskal(graph);
 
-const array = [7, 6, 3, 5, 4, 1, 2];
-console.log('before sorting: ', array);
-console.log('after sorting: ', heapSort(array));
+console.log('Edge   Weight');
+for (let i = 1; i < graph.length; i++) {
+  console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
+}
