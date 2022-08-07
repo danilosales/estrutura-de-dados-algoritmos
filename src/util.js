@@ -25,3 +25,13 @@ export function defaultToString(item) {
   }
   return item.toString();
 }
+
+export function swap(array, a, b) {
+  const temp = array[a];
+  array[a] = array[b];
+  array[b] = temp;
+}
+
+export function reverseCompare(compareFn) {
+  return (a,b) => compareFn(b, a);
+}

@@ -1,7 +1,9 @@
+import heapSort from './algorithms/sorting/heap-sort';
 import BinarySearchTree from './data-structures/binary-search-tree';
 import Deque from './data-structures/deque';
 import Dictionary from './data-structures/dictionary';
 import HashTable from './data-structures/hash-table';
+import { MaxHeap, MinHeap } from './data-structures/heap';
 import LinkedList from './data-structures/linked-list';
 import Queue from './data-structures/queue';
 import { Set } from './data-structures/set';
@@ -197,30 +199,62 @@ import { palindromeChecker } from './others/palindrome-checker';
 // console.log('fibonacci(4)', fibonacciIterative(4));
 // console.log('fibonacci(5)', fibonacciIterative(5));
 
-const tree = new BinarySearchTree();
-tree.insert(11);
-tree.insert(7);
-tree.insert(15);
-tree.insert(5);
-tree.insert(3);
-tree.insert(9);
-tree.insert(8);
-tree.insert(10);
-tree.insert(13);
-tree.insert(12);
-tree.insert(14);
-tree.insert(20);
-tree.insert(18);
-tree.insert(25);
-tree.insert(6);
+// const tree = new BinarySearchTree();
+// tree.insert(11);
+// tree.insert(7);
+// tree.insert(15);
+// tree.insert(5);
+// tree.insert(3);
+// tree.insert(9);
+// tree.insert(8);
+// tree.insert(10);
+// tree.insert(13);
+// tree.insert(12);
+// tree.insert(14);
+// tree.insert(20);
+// tree.insert(18);
+// tree.insert(25);
+// tree.insert(6);
 
-const printNode = (value) => console.log(value);
-tree.inOrderTraverse(printNode);
-tree.preOrderTraverse(printNode);
-tree.postOrderTraverse(printNode);
+// const printNode = (value) => console.log(value);
+// tree.inOrderTraverse(printNode);
+// tree.preOrderTraverse(printNode);
+// tree.postOrderTraverse(printNode);
 
-console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
-console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
+// console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.');
+// console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.');
 
-console.log(tree.remove(15));
-tree.preOrderTraverse(printNode);
+// console.log(tree.remove(15));
+// tree.preOrderTraverse(printNode);
+
+let heap = new MinHeap();
+heap.insert(2);
+heap.insert(3);
+heap.insert(4);
+heap.insert(5);
+heap.insert(1);
+
+console.log('Heap size: ', heap.size());
+console.log('Heap is empty: ', heap.isEmpty());
+console.log('Heap min value: ', heap.findMinimum());
+
+
+heap = new MinHeap();
+for(let i = 1; i < 10; i++) {
+  heap.insert(i);
+}
+console.log('Extract minimum: ', heap.extract());
+
+const maxHeap = new MaxHeap();
+maxHeap.insert(2);
+maxHeap.insert(3);
+maxHeap.insert(4);
+maxHeap.insert(5);
+maxHeap.insert(1);
+console.log('Heap size: ', maxHeap.size());
+console.log('Heap min value: ', maxHeap.findMinimum());
+
+
+const array = [7, 6, 3, 5, 4, 1, 2];
+console.log('before sorting: ', array);
+console.log('after sorting: ', heapSort(array));
