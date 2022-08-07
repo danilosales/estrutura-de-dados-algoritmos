@@ -4,7 +4,13 @@ import { dijkstra } from './algorithms/graph/dijkstra';
 import { floydWarshall } from './algorithms/graph/floyd-warshall';
 import { kruskal } from './algorithms/graph/kruskal';
 import { prim } from './algorithms/graph/prim';
+import { bubbleSort } from './algorithms/sorting/bubble-sort';
+import { countingSort } from './algorithms/sorting/counting-sort';
 import heapSort from './algorithms/sorting/heap-sort';
+import { insertionSort } from './algorithms/sorting/insertion-sort';
+import { mergeSort } from './algorithms/sorting/merge-sort';
+import { quickSort } from './algorithms/sorting/quicksort';
+import { selectionSort } from './algorithms/sorting/selection-sort';
 import BinarySearchTree from './data-structures/binary-search-tree';
 import Deque from './data-structures/deque';
 import Dictionary from './data-structures/dictionary';
@@ -398,29 +404,58 @@ import { palindromeChecker } from './others/palindrome-checker';
 //   console.log(s);
 // }
 
-const graph = [
-  [0, 2, 4, 0, 0, 0],
-  [2, 0, 2, 4, 2, 0],
-  [4, 2, 0, 0, 3, 0],
-  [0, 4, 0, 0, 3, 2],
-  [0, 2, 3, 3, 0, 2],
-  [0, 0, 0, 2, 2, 0]
-];
+// const graph = [
+//   [0, 2, 4, 0, 0, 0],
+//   [2, 0, 2, 4, 2, 0],
+//   [4, 2, 0, 0, 3, 0],
+//   [0, 4, 0, 0, 3, 2],
+//   [0, 2, 3, 3, 0, 2],
+//   [0, 0, 0, 2, 2, 0]
+// ];
 
-console.log("********* Prim's Algorithm - Minimum Spanning Tree ***********");
+// console.log("********* Prim's Algorithm - Minimum Spanning Tree ***********");
 
-let parent = prim(graph);
+// let parent = prim(graph);
 
-console.log('Edge   Weight');
-for (let i = 1; i < graph.length; i++) {
-  console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
+// console.log('Edge   Weight');
+// for (let i = 1; i < graph.length; i++) {
+//   console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
+// }
+
+// console.log('********* Kruskal Algorithm - Minimum Spanning Tree ***********');
+
+// parent = kruskal(graph);
+
+// console.log('Edge   Weight');
+// for (let i = 1; i < graph.length; i++) {
+//   console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
+// }
+
+function createNonSortedArray(size) {
+  const array = [];
+  for(let i = size; i > 0; i--) {
+    array.push(i);
+  }
+  return array;
 }
 
-console.log('********* Kruskal Algorithm - Minimum Spanning Tree ***********');
+let array = createNonSortedArray(5);
+console.log(array.join());
+// array = bubbleSort(array);
+// console.log(array.join());
 
-parent = kruskal(graph);
+// array = selectionSort(array);
+// console.log(array.join());
 
-console.log('Edge   Weight');
-for (let i = 1; i < graph.length; i++) {
-  console.log(parent[i] + ' - ' + i + '   ' + graph[i][parent[i]]);
-}
+// array = insertionSort(array);
+// console.log(array.join());
+
+// array = mergeSort(array);
+// console.log(array.join());
+
+// array = quickSort(array);
+// console.log(array.join());
+
+
+array = countingSort(array);
+console.log(array.join());
