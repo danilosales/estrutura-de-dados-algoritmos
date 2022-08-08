@@ -4,6 +4,8 @@ export const Compare = {
   EQUALS: 0
 }
 
+export const DOES_NOT_EXIST = -1;
+
 export function defaultCompare(a, b) {
   if(a === b) {
     return Compare.EQUALS;
@@ -34,4 +36,18 @@ export function swap(array, a, b) {
 
 export function reverseCompare(compareFn) {
   return (a,b) => compareFn(b, a);
+}
+
+export function lesserEquals(a, b, compareFn) {
+  const comp = compareFn(a, b);
+  return comp === Compare.LESS_THAN || comp === Compare.EQUALS;
+}
+
+export function biggerEquals(a, b, compareFn) {
+  const comp = compareFn(a, b);
+  return comp === Compare.BIGGER_THAN || comp === Compare.EQUALS;
+}
+
+export function defaultDiff(a, b) {
+  return Number(a) - Number(b);
 }

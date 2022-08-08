@@ -5,11 +5,13 @@ import { floydWarshall } from './algorithms/graph/floyd-warshall';
 import { kruskal } from './algorithms/graph/kruskal';
 import { prim } from './algorithms/graph/prim';
 import { bubbleSort } from './algorithms/sorting/bubble-sort';
+import { bucketSort } from './algorithms/sorting/bucket-sort';
 import { countingSort } from './algorithms/sorting/counting-sort';
 import heapSort from './algorithms/sorting/heap-sort';
 import { insertionSort } from './algorithms/sorting/insertion-sort';
 import { mergeSort } from './algorithms/sorting/merge-sort';
 import { quickSort } from './algorithms/sorting/quicksort';
+import { radixSort } from './algorithms/sorting/radix-sort';
 import { selectionSort } from './algorithms/sorting/selection-sort';
 import BinarySearchTree from './data-structures/binary-search-tree';
 import Deque from './data-structures/deque';
@@ -456,6 +458,11 @@ console.log(array.join());
 // array = quickSort(array);
 // console.log(array.join());
 
+// array = countingSort(array);
+// console.log(array.join());
 
-array = countingSort(array);
+// array = bucketSort(array);
+// console.log(array.join());
+
+array = radixSort(array);
 console.log(array.join());

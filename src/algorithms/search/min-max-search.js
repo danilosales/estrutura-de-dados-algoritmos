@@ -12,6 +12,7 @@ export function findMaxValue(array, compareFn = defaultCompare) {
   }
   return undefined;
 }
+
 export function findMinValue(array, compareFn = defaultCompare) {
   if (array && array.length > 0) {
     let min = array[0];
