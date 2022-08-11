@@ -464,5 +464,30 @@ console.log(array.join());
 // array = bucketSort(array);
 // console.log(array.join());
 
-array = radixSort(array);
-console.log(array.join());
+// array = radixSort(array);
+// console.log(array.join());
+
+const arr = [3, 1, 8, 8, 4, 10, 5, 8, 6, 5, 7, 6, 10];
+
+let hashMap = {};
+
+let maxElement = Number.MIN_VALUE;
+let oldElement = Number.MIN_VALUE;
+
+for(let i = 0; i < arr.length; i++) {
+  const key = arr[i];
+  const total = hashMap[key] == null ? 1 : hashMap[key] + 1;
+  hashMap[key] = total;
+
+  if(maxElement === key && total > 1) {
+    maxElement = oldElement;
+  }
+
+  if(total === 1 && key > maxElement) {
+    oldElement = maxElement;
+    maxElement = key;
+  }
+}
+
+console.log(hashMap);
+console.log(maxElement)
